@@ -1,0 +1,24 @@
+<div nz-row [nzGutter]="[16, 24]" nzJustify="center">
+    <div
+        *ngFor="let product of products"
+        nz-col
+        nzSpan="8"
+    >
+        <nz-card
+            nzHoverable
+            style="width: 240px"
+            [nzCover]="coverTemplate"
+        >
+            <nz-card-meta
+                nzTitle="Europe Street beat"
+                nzDescription="www.instagram.com"
+            ></nz-card-meta>
+        </nz-card>
+        <ng-template #coverTemplate>
+            <img
+                alt="example"
+                src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+            />
+        </ng-template>
+    </div>
+</div>
