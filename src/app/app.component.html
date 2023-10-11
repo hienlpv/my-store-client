@@ -8,8 +8,18 @@
                 nzTheme="dark"
                 nzMode="horizontal"
             >
-            <li nz-menu-item><a href="/home/products" (click)="onClickProducts($event)">Products</a></li>
-            <li nz-menu-item><a href="/home/cart" (click)="onClickCart($event)">Cart</a></li>
+                <li
+                    nz-menu-item
+                    nzMatchRouter
+                >
+                    <a [routerLink]="['/', 'home', 'products']">Products</a>
+                </li>
+                <li
+                    nz-menu-item
+                    nzMatchRouter
+                >
+                    <a [routerLink]="['/', 'home', 'cart']">Cart</a>
+                </li>
             </ul>
         </nz-header>
         <nz-content>

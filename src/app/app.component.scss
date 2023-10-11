@@ -9,10 +9,12 @@
     height: 100vh;
 }
 
-nz-header {
-    padding: 0;
-    width: 100%;
-    z-index: 2;
+.logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
 }
 
 .app-header {
@@ -24,11 +26,11 @@ nz-header {
 }
 
 nz-content {
-    margin: 24px;
+    margin: 50px;
 }
 
 .inner-content {
-    padding: 24px;
+    padding: 25px;
     background: #fff;
     height: 100%;
     overflow: auto;
