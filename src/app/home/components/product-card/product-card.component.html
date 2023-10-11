@@ -6,7 +6,7 @@
     [nzActions]="[actionQuantity, actionAdd]"
 >
     <nz-card-meta
-        [nzTitle]="product.name"
+        [nzTitle]="title"
         [nzDescription]="product.description"
     ></nz-card-meta>
 </nz-card>
@@ -38,5 +38,11 @@
             ></span>
             Add
         </button>
+    </div>
+</ng-template>
+<ng-template #title>
+    <div class="title">
+        <span>{{ product.name }}</span>
+        <span>${{ product.price }}</span>
     </div>
 </ng-template>

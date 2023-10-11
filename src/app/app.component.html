@@ -1,7 +1,12 @@
 <nz-layout class="app-layout">
     <nz-layout>
         <nz-header>
-            <div class="logo"></div>
+            <a [routerLink]="['/', 'home']" class="logo">
+                <img
+                    src="assets/logo.png"
+                    alt="logo"
+                />
+            </a>
 
             <ul
                 nz-menu

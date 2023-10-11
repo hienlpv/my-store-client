@@ -8,6 +8,6 @@
         nz-col
         nzSpan="8"
     >
-        <app-product-card [product]="product"></app-product-card>
+        <app-product-card [routerLink]="['/', 'home', 'products', product.id]" [product]="product"></app-product-card>
     </div>
 </div>

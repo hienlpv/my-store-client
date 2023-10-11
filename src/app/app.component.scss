@@ -10,11 +10,16 @@
 }
 
 .logo {
-    width: 120px;
+    position: relative;
+    width: 160px;
     height: 31px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 16px 24px 16px 0;
     float: left;
+
+    img {
+        position: absolute;
+        width: 160px;
+        top: -10px;
+    }
 }
 
 .app-header {

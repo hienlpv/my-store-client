@@ -1,1 +1,55 @@
-<p>product works!</p>
+<div
+    *ngIf="product"
+    nz-row
+>
+    <div
+        class="product-img"
+        nz-col
+        nzSpan="12"
+    >
+        <img
+            nz-image
+            width="50%"
+            [nzSrc]="product.url"
+            alt="product-img"
+        />
+    </div>
+    <div
+        class="product-detail"
+        nz-col
+        nzSpan="12"
+    >
+        <h1>{{ product.name }}</h1>
+        <p>${{ product.price }}</p>
+        <p>{{ product.description }}</p>
+        <p>
+            <nz-input-number
+                [(ngModel)]="quantity"
+                [nzMin]="1"
+                [nzStep]="1"
+            ></nz-input-number>
+        </p>
+        <p>
+            <button
+                nz-button
+                nzType="primary"
+            >
+                <span
+                    nz-icon
+                    nzType="plus"
+                ></span>
+                Add to cart
+            </button>
+        </p>
+        <p>
+            <a (click)="goBack()">
+                <span
+                    nz-icon
+                    nzType="arrow-left"
+                    nzTheme="outline"
+                ></span>
+                Back to product list
+            </a>
+        </p>
+    </div>
+</div>
