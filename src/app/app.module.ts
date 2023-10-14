@@ -27,7 +27,7 @@ registerLocaleData(en);
         IconsProviderModule,
         HomeModule,
         SharedModule,
-        NgZorroAntdModule
+        NgZorroAntdModule,
     ],
     providers: [{ provide: NZ_I18N, useValue: en_US }],
     bootstrap: [AppComponent],

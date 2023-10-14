@@ -1,1 +1,61 @@
-<p>cart works!</p>
+<ng-container *ngIf="is_checkout">
+    <app-result [fullname]="this.checkout_form.value.fullname" [total]="total"></app-result>
+</ng-container>
+<ng-container *ngIf="!is_checkout">
+    <div nz-row>
+        <div nz-col nzSpan="12">
+            <nz-space nzDirection="vertical" nzSize="middle">
+                <h2 class="total">Total: ${{ total }}</h2>
+                <ng-container *ngFor="let cart_product of cart_products">
+                    <div *nzSpaceItem nz-row [nzGutter]="32">
+                        <div nz-col nzSpan="12">
+                            <img [src]="cart_product.url" width="100%" alt="product-img" />
+                        </div>
+                        <div nz-col nzSpan="12">
+                            <nz-space nzDirection="vertical" nzSize="large">
+                                <b *nzSpaceItem>{{ cart_product.name }}</b>
+                                <span *nzSpaceItem>$ {{ cart_product.price }}</span>
+                                <span *nzSpaceItem>Ammount:</span>
+                                <nz-input-number
+                                    *nzSpaceItem
+                                    [(ngModel)]="cart_product.quantity"
+                                    [nzMin]="1"
+                                    [nzStep]="1"
+                                ></nz-input-number>
+                            </nz-space>
+                        </div>
+                    </div>
+                </ng-container>
+            </nz-space>
+        </div>
+        <div nz-col nzSpan="12">
+            <form [formGroup]="checkout_form" nz-form nzLayout="vertical">
+                <nz-form-item>
+                    <nz-form-label>Full name</nz-form-label>
+                    <nz-form-control>
+                        <input formControlName="fullname" nz-input placeholder="(minimum 3 characters)" />
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label>Address</nz-form-label>
+                    <nz-form-control>
+                        <input formControlName="address" nz-input placeholder="(minimum 6 characters)" />
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label>Credit card number</nz-form-label>
+                    <nz-form-control>
+                        <input formControlName="credit" nz-input placeholder="(16-digit number)" />
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control>
+                        <button [disabled]="checkout_form.invalid" (click)="onSubmit()" nz-button nzType="primary">
+                            Submit
+                        </button>
+                    </nz-form-control>
+                </nz-form-item>
+            </form>
+        </div>
+    </div>
+</ng-container>

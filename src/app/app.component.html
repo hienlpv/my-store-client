@@ -2,27 +2,14 @@
     <nz-layout>
         <nz-header>
             <a [routerLink]="['/', 'home']" class="logo">
-                <img
-                    src="assets/logo.png"
-                    alt="logo"
-                />
+                <img src="assets/logo.png" alt="logo" />
             </a>
 
-            <ul
-                nz-menu
-                nzTheme="dark"
-                nzMode="horizontal"
-            >
-                <li
-                    nz-menu-item
-                    nzMatchRouter
-                >
+            <ul nz-menu nzTheme="dark" nzMode="horizontal">
+                <li nz-menu-item nzMatchRouter>
                     <a [routerLink]="['/', 'home', 'products']">Products</a>
                 </li>
-                <li
-                    nz-menu-item
-                    nzMatchRouter
-                >
+                <li nz-menu-item nzMatchRouter>
                     <a [routerLink]="['/', 'home', 'cart']">Cart</a>
                 </li>
             </ul>

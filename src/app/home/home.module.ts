@@ -7,10 +7,11 @@ import { HomeRoutes } from './home.routing';
 import { CartComponent } from './pages/cart/cart.component';
 import { NgZorroAntdModule } from '../ng-zorro-antd.module';
 import { ProductCardComponent } from './components/product-card/product-card.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResultComponent } from './components/result/result.component';
 
 @NgModule({
-    declarations: [ProductListComponent, ProductComponent, CartComponent, ProductCardComponent],
-    imports: [CommonModule, RouterModule.forChild(HomeRoutes), FormsModule, NgZorroAntdModule],
+    declarations: [ProductListComponent, ProductComponent, CartComponent, ProductCardComponent, ResultComponent],
+    imports: [CommonModule, RouterModule.forChild(HomeRoutes), FormsModule, ReactiveFormsModule, NgZorroAntdModule],
 })
 export class HomeModule {}

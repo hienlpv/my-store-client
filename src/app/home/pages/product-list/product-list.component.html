@@ -1,13 +1,5 @@
-<div
-    nz-row
-    [nzGutter]="[16, 24]"
-    nzJustify="center"
->
-    <div
-        *ngFor="let product of products"
-        nz-col
-        nzSpan="8"
-    >
-        <app-product-card [routerLink]="['/', 'home', 'products', product.id]" [product]="product"></app-product-card>
+<div nz-row [nzGutter]="[64, 64]">
+    <div *ngFor="let product of products" nz-col nzSpan="8">
+        <app-product-card [product]="product"></app-product-card>
     </div>
 </div>

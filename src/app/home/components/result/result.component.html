@@ -1,0 +1,16 @@
+<nz-result nzStatus="success" [nzTitle]="title">
+    <div nz-result-extra>
+        <button [routerLink]="['/', 'home', 'products']" nz-button nzType="primary">Back to product list</button>
+    </div>
+    <ng-template #title>
+        <div class="title">
+            <p>
+                Thank you, <b>{{ fullname }}!</b>
+            </p>
+            <p>
+                Your <b>${{ total }}</b> order is confirmed!
+            </p>
+            <p>Please allow 1-3 business days for shipping.</p>
+        </div>
+    </ng-template>
+</nz-result>
