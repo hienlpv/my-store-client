@@ -5,7 +5,6 @@
     <div nz-row>
         <div nz-col nzSpan="12">
             <nz-space nzDirection="vertical" nzSize="middle">
-                <h2 class="total">Total: ${{ total }}</h2>
                 <ng-container *ngFor="let cart_product of cart_products">
                     <div *nzSpaceItem nz-row [nzGutter]="32">
                         <div nz-col nzSpan="12">
@@ -15,7 +14,6 @@
                             <nz-space nzDirection="vertical" nzSize="large">
                                 <b *nzSpaceItem>{{ cart_product.name }}</b>
                                 <span *nzSpaceItem>$ {{ cart_product.price }}</span>
-                                <span *nzSpaceItem>Ammount:</span>
                                 <nz-input-number
                                     *nzSpaceItem
                                     [(ngModel)]="cart_product.quantity"
@@ -55,6 +53,7 @@
                         </button>
                     </nz-form-control>
                 </nz-form-item>
+                <h2 class="total">Total: ${{ total }}</h2>
             </form>
         </div>
     </div>
