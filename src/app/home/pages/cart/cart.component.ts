@@ -34,4 +34,10 @@ export class CartComponent {
         this.storageService.clearCart();
         this.is_checkout = true;
     }
+
+    onChangeQuantity(index: number, qty: number) {
+        if (isNaN(qty) || qty <= 0) {
+            this.cart_products.splice(index, 1);
+        }
+    }
 }

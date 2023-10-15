@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -7,15 +6,5 @@ import { Router } from '@angular/router';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    constructor(private router: Router) {}
-
-    onClickProducts(e: any) {
-        e.preventDefault();
-        this.router.navigateByUrl('home/products');
-    }
-
-    onClickCart(e: any) {
-        e.preventDefault();
-        this.router.navigateByUrl('home/cart');
-    }
+    constructor() {}
 }

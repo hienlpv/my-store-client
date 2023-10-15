@@ -5,7 +5,7 @@
     <div nz-row>
         <div nz-col nzSpan="12">
             <nz-space nzDirection="vertical" nzSize="middle">
-                <ng-container *ngFor="let cart_product of cart_products">
+                <ng-container *ngFor="let cart_product of cart_products; let i = index">
                     <div *nzSpaceItem nz-row [nzGutter]="32">
                         <div nz-col nzSpan="12">
                             <img [src]="cart_product.url" width="100%" alt="product-img" />
@@ -17,7 +17,7 @@
                                 <nz-input-number
                                     *nzSpaceItem
                                     [(ngModel)]="cart_product.quantity"
-                                    [nzMin]="1"
+                                    (ngModelChange)="onChangeQuantity(i, $event)"
                                     [nzStep]="1"
                                 ></nz-input-number>
                             </nz-space>
